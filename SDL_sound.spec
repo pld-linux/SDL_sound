@@ -11,7 +11,14 @@ URL:		http://www.icculus.org/SDL_sound/
 BuildRequires:	SDL-devel >= 1.2.6
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	flac-devel
+BuildRequires:	libmikmod-devel >= 3.1.5
+BuildRequires:	libvorbis-devel >= 1:1.0-6
 BuildRequires:	libtool
+# (lib)modplug-devel ?
+#BuildRequires:	physfs-devel
+BuildRequires:	smpeg-devel >= 0.4.4-12
+BuildRequires:	speex-devel
 Requires:	SDL >= 1.2.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +53,12 @@ Summary:	Header files and more to develop SDL_sound applications
 Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem SDL_sound
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	SDL-devel
+Requires:	SDL-devel >= 1.2.6
+Requires:	flac-devel
+Requires:	libmikmod-devel >= 3.1.5
+Requires:	libvorbis-devel >= 1:1.0
+Requires:	smpeg-devel >= 0.4.4
+Requires:	speex-devel
 
 %description devel
 Header files and more to develop SDL_sound applications.
@@ -69,7 +81,14 @@ Statyczne biblioteki SDL_sound.
 %prep
 %setup -q
 
+echo 'AC_DEFUN([AM_PATH_VORBIS],[XIPH_PATH_VORBIS])' > acinclude.m4
+
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -87,12 +106,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc CHANGELOG CREDITS README TODO
 %attr(755,root,root) %{_bindir}/playsound
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc README
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/SDL/*
