@@ -1,15 +1,16 @@
-Summary:	An abstract soundfile decoder.
+Summary:	An abstract soundfile decoder
+Summary(pl):	Abstrakcyjny dekoder plików d¼wiêkowych
 Name:		SDL_sound
 Version:	1.0.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://www.icculus.org/%{name}/downloads//%{name}-%{version}.tar.gz
+Source0:	http://www.icculus.org/%{name}/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.icculus.org/SDL_sound/
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	SDL-devel >= 1.2.0
 Requires:	SDL >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,8 +29,22 @@ waveform. SDL_sound can also handle sample rate, audio format, and
 channel conversion on-the-fly and behind-the-scenes, if the programmer
 desires.
 
+%description -l pl
+SDL_sound to biblioteka obs³uguj±ca dekodowanie kilku popularnych
+formatów plików d¼wiêkowych, takich jak .WAV lub .MP3. Jej celem
+jest uproszczenie pracy programisty przy odtwarzaniu d¼wiêku.
+Programista przekazuje SDL_sound nazwê pliku lub dostarcza dane
+bezpo¶rednio z jednego z wielu ¼róde³, a nastêpnie odczytuje strumieñ
+zdekodowanych danych. Je¶li ograniczenia zasobów s± istotne, SDL_sound
+mo¿e obs³ugiwaæ dane d¼wiêkowe w podanych blokach. Alternatywnie,
+SDL_sound mo¿e dekodowaæ ca³y plik d¼wiêkowy i przekazywaæ z powrotem
+pojedynczy wska¼nik do ca³o¶ci zdekodowanych danych. SDL_sound mo¿e
+tak¿e obs³ugiwaæ w locie konwersjê czêstotliwo¶ci próbkowania, formatu
+d¼wiêku i liczby kana³ów.
+
 %package devel
 Summary:	Header files and more to develop SDL_sound applications
+Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem SDL_sound
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
@@ -37,13 +52,20 @@ Requires:	SDL-devel
 %description devel
 Header files and more to develop SDL_sound applications.
 
+%description devel -l pl
+Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem SDL_sound.
+
 %package static
 Summary:	Static SDL_sound libraries
+Summary(pl):	Statyczne biblioteki SDL_sound
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
-Statis SDL_net libraries.
+Static SDL_sound libraries.
+
+%description static -l pl
+Statyczne biblioteki SDL_sound.
 
 %prep
 %setup -q
