@@ -16,7 +16,7 @@ BuildRequires:	libmikmod-devel >= 3.1.5
 BuildRequires:	libmodplug-devel
 BuildRequires:	libvorbis-devel >= 1:1.0-6
 BuildRequires:	libtool
-#BuildRequires:	physfs-devel
+BuildRequires:	physfs-devel
 BuildRequires:	smpeg-devel >= 0.4.4-12
 BuildRequires:	speex-devel
 Requires:	SDL >= 1.2.6
