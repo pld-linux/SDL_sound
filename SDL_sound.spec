@@ -13,9 +13,9 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flac-devel
 BuildRequires:	libmikmod-devel >= 3.1.5
+BuildRequires:	libmodplug-devel
 BuildRequires:	libvorbis-devel >= 1:1.0-6
 BuildRequires:	libtool
-# (lib)modplug-devel ?
 #BuildRequires:	physfs-devel
 BuildRequires:	smpeg-devel >= 0.4.4-12
 BuildRequires:	speex-devel
@@ -56,6 +56,7 @@ Requires:	%{name} = %{version}
 Requires:	SDL-devel >= 1.2.6
 Requires:	flac-devel
 Requires:	libmikmod-devel >= 3.1.5
+Requires:	libmodplug-devel
 Requires:	libvorbis-devel >= 1:1.0
 Requires:	smpeg-devel >= 0.4.4
 Requires:	speex-devel
@@ -89,6 +90,7 @@ echo 'AC_DEFUN([AM_PATH_VORBIS],[XIPH_PATH_VORBIS])' > acinclude.m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+CPPFLAGS="-I/usr/include/libmodplug"
 %configure
 %{__make}
 
