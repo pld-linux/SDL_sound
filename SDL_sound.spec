@@ -2,19 +2,17 @@ Summary:	An abstract soundfile decoder
 Summary(pl):	Abstrakcyjny dekoder plików d¼wiêkowych
 Name:		SDL_sound
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.icculus.org/%{name}/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.icculus.org/SDL_sound/
-BuildRequires:	SDL-devel >= 1.2.0
+BuildRequires:	SDL-devel >= 1.2.5-2
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-Requires:	SDL >= 1.2.0
+Requires:	SDL >= 1.2.5-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
 
 %description
 SDL_sound is a library that handles the decoding of several popular
