@@ -6,6 +6,7 @@ Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.icculus.org/%{name}/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	864a3b6e899d9a3aba45ce19ceba2ae2
 URL:		http://www.icculus.org/SDL_sound/
 BuildRequires:	SDL-devel >= 1.2.5-2
 BuildRequires:	autoconf
