@@ -52,7 +52,7 @@ d¼wiêku i liczby kana³ów.
 Summary:	Header files and more to develop SDL_sound applications
 Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem SDL_sound
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.6
 Requires:	flac-devel
 Requires:	libmikmod-devel >= 3.1.5
@@ -71,7 +71,7 @@ Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem SDL_sound.
 Summary:	Static SDL_sound libraries
 Summary(pl):	Statyczne biblioteki SDL_sound
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static SDL_sound libraries.
