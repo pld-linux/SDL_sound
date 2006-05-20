@@ -5,7 +5,7 @@ Version:	1.0.1
 Release:	3
 License:	LGPL
 Group:		Libraries
-Source0:	http://www.icculus.org/%{name}/downloads/%{name}-%{version}.tar.gz
+Source0:	http://www.icculus.org/SDL_sound/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	49e197ef7c8ab623d0640dc74be43160
 URL:		http://www.icculus.org/SDL_sound/
 BuildRequires:	SDL-devel >= 1.2.6
