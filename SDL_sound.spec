@@ -7,11 +7,12 @@ License:	LGPL
 Group:		Libraries
 Source0:	http://www.icculus.org/SDL_sound/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	49e197ef7c8ab623d0640dc74be43160
+Patch0:		%{name}-flac.patch
 URL:		http://www.icculus.org/SDL_sound/
 BuildRequires:	SDL-devel >= 1.2.6
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	flac-devel
+BuildRequires:	flac-devel >= 1.1.3
 BuildRequires:	libmikmod-devel >= 3.1.5
 BuildRequires:	libmodplug-devel
 BuildRequires:	libvorbis-devel >= 1:1.0-6
@@ -54,7 +55,7 @@ Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem SDL_sound
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.6
-Requires:	flac-devel
+Requires:	flac-devel >= 1.1.3
 Requires:	libmikmod-devel >= 3.1.5
 Requires:	libmodplug-devel
 Requires:	libvorbis-devel >= 1:1.0
@@ -81,6 +82,7 @@ Statyczne biblioteki SDL_sound.
 
 %prep
 %setup -q
+%patch0 -p1
 
 echo 'AC_DEFUN([AM_PATH_VORBIS],[XIPH_PATH_VORBIS])' > acinclude.m4
 
@@ -90,7 +92,7 @@ echo 'AC_DEFUN([AM_PATH_VORBIS],[XIPH_PATH_VORBIS])' > acinclude.m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CPPFLAGS="-I/usr/include/libmodplug"
+CPPFLAGS="-I/usr/include/libmodplug -I/usr/include/speex"
 %configure
 %{__make}
 
