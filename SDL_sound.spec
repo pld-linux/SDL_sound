@@ -1,5 +1,5 @@
 Summary:	An abstract soundfile decoder
-Summary(pl):	Abstrakcyjny dekoder plikÛw dºwiÍkowych
+Summary(pl.UTF-8):   Abstrakcyjny dekoder plik√≥w d≈∫wiƒôkowych
 Name:		SDL_sound
 Version:	1.0.1
 Release:	5
@@ -36,22 +36,22 @@ waveform. SDL_sound can also handle sample rate, audio format, and
 channel conversion on-the-fly and behind-the-scenes, if the programmer
 desires.
 
-%description -l pl
-SDL_sound to biblioteka obs≥uguj±ca dekodowanie kilku popularnych
-formatÛw plikÛw dºwiÍkowych, takich jak .WAV lub .MP3. Jej celem
-jest uproszczenie pracy programisty przy odtwarzaniu dºwiÍku.
-Programista przekazuje SDL_sound nazwÍ pliku lub dostarcza dane
-bezpo∂rednio z jednego z wielu ºrÛde≥, a nastÍpnie odczytuje strumieÒ
-zdekodowanych danych. Je∂li ograniczenia zasobÛw s± istotne, SDL_sound
-moøe obs≥ugiwaÊ dane dºwiÍkowe w podanych blokach. Alternatywnie,
-SDL_sound moøe dekodowaÊ ca≥y plik dºwiÍkowy i przekazywaÊ z powrotem
-pojedynczy wskaºnik do ca≥o∂ci zdekodowanych danych. SDL_sound moøe
-takøe obs≥ugiwaÊ w locie konwersjÍ czÍstotliwo∂ci prÛbkowania, formatu
-dºwiÍku i liczby kana≥Ûw.
+%description -l pl.UTF-8
+SDL_sound to biblioteka obs≈ÇugujƒÖca dekodowanie kilku popularnych
+format√≥w plik√≥w d≈∫wiƒôkowych, takich jak .WAV lub .MP3. Jej celem
+jest uproszczenie pracy programisty przy odtwarzaniu d≈∫wiƒôku.
+Programista przekazuje SDL_sound nazwƒô pliku lub dostarcza dane
+bezpo≈õrednio z jednego z wielu ≈∫r√≥de≈Ç, a nastƒôpnie odczytuje strumie≈Ñ
+zdekodowanych danych. Je≈õli ograniczenia zasob√≥w sƒÖ istotne, SDL_sound
+mo≈ºe obs≈Çugiwaƒá dane d≈∫wiƒôkowe w podanych blokach. Alternatywnie,
+SDL_sound mo≈ºe dekodowaƒá ca≈Çy plik d≈∫wiƒôkowy i przekazywaƒá z powrotem
+pojedynczy wska≈∫nik do ca≈Ço≈õci zdekodowanych danych. SDL_sound mo≈ºe
+tak≈ºe obs≈Çugiwaƒá w locie konwersjƒô czƒôstotliwo≈õci pr√≥bkowania, formatu
+d≈∫wiƒôku i liczby kana≈Ç√≥w.
 
 %package devel
 Summary:	Header files and more to develop SDL_sound applications
-Summary(pl):	Pliki nag≥Ûwkowe do tworzenia aplikacji z uøyciem SDL_sound
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe do tworzenia aplikacji z u≈ºyciem SDL_sound
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.6
@@ -65,19 +65,19 @@ Requires:	speex-devel
 %description devel
 Header files and more to develop SDL_sound applications.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe do tworzenia aplikacji z uøyciem SDL_sound.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe do tworzenia aplikacji z u≈ºyciem SDL_sound.
 
 %package static
 Summary:	Static SDL_sound libraries
-Summary(pl):	Statyczne biblioteki SDL_sound
+Summary(pl.UTF-8):   Statyczne biblioteki SDL_sound
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static SDL_sound libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki SDL_sound.
 
 %prep
