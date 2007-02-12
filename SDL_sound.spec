@@ -1,5 +1,5 @@
 Summary:	An abstract soundfile decoder
-Summary(pl.UTF-8):   Abstrakcyjny dekoder plików dźwiękowych
+Summary(pl.UTF-8):	Abstrakcyjny dekoder plików dźwiękowych
 Name:		SDL_sound
 Version:	1.0.1
 Release:	5
@@ -51,7 +51,7 @@ dźwięku i liczby kanałów.
 
 %package devel
 Summary:	Header files and more to develop SDL_sound applications
-Summary(pl.UTF-8):   Pliki nagłówkowe do tworzenia aplikacji z użyciem SDL_sound
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem SDL_sound
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.6
@@ -70,7 +70,7 @@ Pliki nagłówkowe do tworzenia aplikacji z użyciem SDL_sound.
 
 %package static
 Summary:	Static SDL_sound libraries
-Summary(pl.UTF-8):   Statyczne biblioteki SDL_sound
+Summary(pl.UTF-8):	Statyczne biblioteki SDL_sound
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
