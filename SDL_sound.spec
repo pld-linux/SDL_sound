@@ -1,13 +1,12 @@
 Summary:	An abstract soundfile decoder
 Summary(pl.UTF-8):	Abstrakcyjny dekoder plików dźwiękowych
 Name:		SDL_sound
-Version:	1.0.1
-Release:	8
-License:	LGPL
+Version:	1.0.3
+Release:	1
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.icculus.org/SDL_sound/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	49e197ef7c8ab623d0640dc74be43160
-Patch0:		%{name}-flac.patch
+# Source0-md5:	aa09cd52df85d29bee87a664424c94b5
 URL:		http://www.icculus.org/SDL_sound/
 BuildRequires:	SDL-devel >= 1.2.6
 BuildRequires:	autoconf
@@ -82,9 +81,8 @@ Statyczne biblioteki SDL_sound.
 
 %prep
 %setup -q
-%patch0 -p1
 
-echo 'AC_DEFUN([AM_PATH_VORBIS],[XIPH_PATH_VORBIS])' > acinclude.m4
+rm acinclude.m4
 
 %build
 %{__libtoolize}
@@ -92,7 +90,6 @@ echo 'AC_DEFUN([AM_PATH_VORBIS],[XIPH_PATH_VORBIS])' > acinclude.m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CPPFLAGS="-I/usr/include/libmodplug -I/usr/include/speex"
 %configure
 %{__make}
 
@@ -110,16 +107,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG CREDITS README TODO
+# COPYING contains additional notes
+%doc CHANGELOG COPYING CREDITS README TODO
 %attr(755,root,root) %{_bindir}/playsound
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libSDL_sound-1.0.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libSDL_sound-1.0.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/SDL/*
+%attr(755,root,root) %{_libdir}/libSDL_sound.so
+%{_libdir}/libSDL_sound.la
+%{_includedir}/SDL/SDL_sound.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libSDL_sound.a
