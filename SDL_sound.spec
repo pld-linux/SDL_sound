@@ -7,6 +7,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.icculus.org/SDL_sound/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	aa09cd52df85d29bee87a664424c94b5
+Patch0:		%{name}-physfs.patch
 URL:		http://www.icculus.org/SDL_sound/
 BuildRequires:	SDL-devel >= 1.2.6
 BuildRequires:	autoconf
@@ -16,7 +17,7 @@ BuildRequires:	libmikmod-devel >= 3.1.5
 BuildRequires:	libmodplug-devel
 BuildRequires:	libvorbis-devel >= 1:1.0-6
 BuildRequires:	libtool
-BuildRequires:	physfs-devel >= 1.0.1
+BuildRequires:	physfs-devel >= 3
 BuildRequires:	smpeg-devel >= 0.4.4-12
 BuildRequires:	speex-devel
 Requires:	SDL >= 1.2.6
@@ -81,8 +82,9 @@ Statyczne biblioteki SDL_sound.
 
 %prep
 %setup -q
+%patch0 -p1
 
-rm acinclude.m4
+%{__rm} acinclude.m4
 
 %build
 %{__libtoolize}
