@@ -2,7 +2,7 @@ Summary:	An abstract soundfile decoder
 Summary(pl.UTF-8):	Abstrakcyjny dekoder plików dźwiękowych
 Name:		SDL_sound
 Version:	1.0.3
-Release:	8
+Release:	9
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.icculus.org/SDL_sound/downloads/%{name}-%{version}.tar.gz
