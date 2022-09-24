@@ -49,6 +49,19 @@ pojedynczy wskaźnik do całości zdekodowanych danych. SDL_sound może
 także obsługiwać w locie konwersję częstotliwości próbkowania, formatu
 dźwięku i liczby kanałów.
 
+%package play
+Summary:	SDL_sound/physfs based music player
+Summary(pl.UTF-8):	Odtwarzacz muzyki oparty na SDL_sound/physfs
+Group:		Applications/Sound
+Requires:	%{name} = %{version}-%{release}
+Requires:	physfs >= 3
+
+%description play
+SDL_sound/physfs based music player.
+
+%description play -l pl.UTF-8
+Odtwarzacz muzyki oparty na SDL_sound/physfs.
+
 %package devel
 Summary:	Header files and more to develop SDL_sound applications
 Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem SDL_sound
@@ -111,9 +124,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 # COPYING contains additional notes
 %doc CHANGELOG COPYING CREDITS README TODO
-%attr(755,root,root) %{_bindir}/playsound
+%attr(755,root,root) %{_bindir}/playsound_simple
 %attr(755,root,root) %{_libdir}/libSDL_sound-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libSDL_sound-1.0.so.1
+
+%files play
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/playsound
 
 %files devel
 %defattr(644,root,root,755)
