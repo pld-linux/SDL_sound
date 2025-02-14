@@ -96,7 +96,7 @@ Statyczne biblioteki SDL_sound.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %{__rm} acinclude.m4
 
