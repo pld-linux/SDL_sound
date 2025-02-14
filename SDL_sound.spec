@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Abstrakcyjny dekoder plików dźwiękowych
 Name:		SDL_sound
 # keep 1.x here, for >= 2 see SDL2_sound.spec
 Version:	1.0.3
-Release:	9
+Release:	10
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.icculus.org/SDL_sound/downloads/%{name}-%{version}.tar.gz
